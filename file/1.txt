@@ -1,0 +1,65 @@
+-rw-r--r--  1 root root 1176 Jul 12 05:39 1.txt
+-rw-r--r--  1 root root  855 Jul 12 05:36 cds.conf
+-rw-r--r--  1 root root  604 Jul 12 05:36 eds1.conf
+-rw-r--r--  1 root root  604 Jul 12 05:26 eds.conf
+drwxr-xr-x 18 root root 4096 Oct 29  2018 envoy
+-rw-r--r--  1 root root  260 Jul 12 05:32 envoy1-completed.yaml
+-rw-r--r--  1 root root  260 Jul 12 05:33 envoy1.yaml
+-rw-r--r--  1 root root 1004 Jul 12 05:22 envoy-completed.yaml
+-rw-r--r--  1 root root 1005 Jul 12 05:23 envoy.yaml
+-rw-r--r--  1 root root 2138 Jul 12 05:37 lds.conf
+
+
+ docker run --name=proxy-eds-filebased -d     -p 9901:9901     -p 80:10000     -v /root/:/etc/envoyenvoyproxy/envoy:latest
+  
+  
+  
+    2  curl localhost
+docker run -d -p 81:80 katacoda/docker-http-server; docker run -d -p 82:80 katacoda/docker-http-server;
+
+
+
+    4  docker ps
+    5  curl localhost
+    6  pwd
+    7  ls
+    8  cat eds.conf
+    9  ls
+   10  cat envoy.yaml
+   11  cd /etc/envoy
+   12  cat /etc/envoy/eds.conf
+   13  pwd
+   14  docker ps
+   15  docker exec -it proxy-eds-filebased
+   16  docker exec -it proxy-eds-filebased bash
+   17  dockerps
+   18  docker ps
+   19  
+   mv eds.conf tmp; mv tmp eds.conf
+   20  curl localhost
+   21  
+   
+   
+   docker run --name=proxy-eds-cds-lds-filebased -d     -p 9902:9901     -p 81:10000     -v /root/:/etc/envoy     -v /root/envoy1.yaml:/etc/envoy/envoy.yaml     envoyproxy/envoy:latest
+   22  docker ps
+   23  curl localhost:81
+   24  ls
+   25  cat lds.conf
+   26  curl localhost:81
+   27  
+   docker run -d katacoda/docker-http-server; docker run -d katacoda/docker-http-server;
+   28  
+   mv cds.conf tmp; mv tmp cds.conf; mv lds.conf tmp; mv tmp lds.conf
+   29  curl localhost:81
+   30  pwd
+   31  ls
+   32  pwd
+   33  ls -l
+   34  history > 1.txt
+   35  cat 1.txt
+   36  history
+   37  ls -f
+   38  ls -l
+   39  git branch
+   40  history
+
